@@ -24,3 +24,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* erzwinge 24-Stunden-Format (08:00 statt 8am) */
+.rsv-time {
+  font-size: 0; /* Text ausblenden */
+}
+
+.rsv-time::before {
+  content: attr(data-time);
+  font-size: 14px; /* Originale Schriftgröße wiederherstellen */
+}
+
+
