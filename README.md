@@ -21,7 +21,7 @@ Ein browserbasierter Stundenplaner für Studierende mit Next.js, React und Tailw
 ## 🚀 Schnellstart
 
 ```bash
-git clone https://github.com/DEIN_USERNAME/uni-stundenplaner.git
+git clone https://github.com/Luka3006/uni-stundenplaner.git
 cd uni-stundenplaner
 npm install
 npm run dev
