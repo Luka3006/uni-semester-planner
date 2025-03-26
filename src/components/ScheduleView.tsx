@@ -1,5 +1,5 @@
 "use client";
-import { createTheme, ScheduleView } from "react-schedule-view";
+import { createTheme, ScheduleView, CalendarEvent } from "react-schedule-view";
 import { Module } from "@/types";
 import { toJpeg, toPng } from "html-to-image";
 import { saveAs } from "file-saver";
@@ -20,7 +20,7 @@ const formatTime = (time: number): string => {
     .padStart(2, "0")}`;
 };
 
-const CustomTileContent = ({ event }: { event: any }) => (
+const CustomTileContent: React.FC<{ event: CalendarEvent }> = ({ event }) => (
   <div style={{ padding: "4px" }}>
     <div style={{ fontWeight: "bold", fontSize: "0.9rem" }}>{event.title}</div>
     {event.description && (
@@ -29,11 +29,12 @@ const CustomTileContent = ({ event }: { event: any }) => (
   </div>
 );
 
+
 const customTheme = createTheme("google", {
   hourHeight: "50px",
   timeFormatter: formatTime,
   style: {
-    eventTiles: (event) => ({
+    eventTiles: (event: any) => ({
       border: event.favorite ? "3px solid gold" : "none",
       boxSizing: "border-box",
     }),
